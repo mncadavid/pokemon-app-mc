@@ -4,6 +4,7 @@ const methodOverride = require('method-override');
 const multer = require('multer');
 const upload = multer({dest: 'public/uploads/'});
 const routes = require('./routes');
+require('dotenv').config();
 
 //Middleware
 app.use(express.static("public"));
@@ -13,7 +14,7 @@ app.use('/pokemon', routes.pokemon);
 app.use('/players', routes.players);
 app.use('/teams', routes.teams);
 
-app.listen(3000, () => {
+app.listen(process.env.PORT, () => {
     console.log("Listening");
 })
 
