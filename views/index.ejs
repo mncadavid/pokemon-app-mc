@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Pokemon</h1>
+
+        <ul class="pokemon">
+            <% for(let i=0; i<pokemon.length; i++){ %>
+                <li>
+                    <a href="/pokemon/<%=pokemon[i].id%>"> <%=pokemon[i].name%> </a> <br><br>
+                </li>
+            <% } %>
+        </ul>
+
+        <a href="/pokemon/new">Create a New Pokemon</a>
+        <br><br>
+        <a href='/teams'>Go to Teams</a>
+    </div>
+    <video autoplay muted loop>
+        <source src="https://assets.pokemon.com//assets/cms2/img/misc/virtual-backgrounds/pokemon/grookey.mp4" type="video/mp4">
+    </video>
+</body>
+</html>

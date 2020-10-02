@@ -1,0 +1,6 @@
+body{
+    color: blue;
+    font-family: 'Baloo Tammudu 2', cursive;
+    background-image: linear-gradient(to bottom right, rgba(255,0,0,0.7), rgba(255,255,0,0.7), rgba(0,0,255,0.7));
+    height: 100vh;
+}

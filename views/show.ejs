@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/pokemon.css">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Pokemon Show Page</h1>
+    <h2>Name: <%=pokemon.name%></h2>
+    <img src="<%=pokemon.img%>" >
+    <br>
+    <a href="/pokemon/<%=pokemon.id%>/edit">Edit</a>
+    <br>
+    <form action="/pokemon/<%=pokemon.id%>?_method=DELETE" method="POST">
+        <input type="submit" value="Delete">
+    </form>
+    <h3>This Pokemon has been added by:</h3>
+    <% for(let i =0; i<pokemon.Players.length; i++){%>
+        <li><%=pokemon.Players[i].name%></li>
+    <%}%>
+    <a href='/pokemon'>Back to Pokemon</a>
+</body>
+</html>

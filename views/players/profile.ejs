@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="/css/profile.css">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Profile</h1>
+    <form action='/players/profile/<%=player.id%>/edit?_method=PUT' method=POST>
+        Name: <input type="text" name="name" value="<%=player.name%>"><br><br>
+        Username: <input type="text" name="username" value="<%=player.username%>"><br><br>
+        Password: <input type="text" name="password" value="<%=player.password%>"><br><br>
+        Team: <select name="teamId" id="teams">
+                <%for (let i=0; i<teams.length; i++){%>
+                    <option value="<%=teams[i].id%>"><%=teams[i].name%></option>
+                <%}%>
+                </select>
+        <br><br>
+        <!-- Caught Pokemon: <select name="pokemon">
+            <%for (let i=0; i<pokemon.length; i++){%>
+                <option value="<%=pokemon[i].id%>"><%=pokemon[i].name%></option>    
+            <%}%>
+        </select> -->
+        <div class="multiselect">
+            <div class="selectBox" onclick="showCheckboxes()">
+              <select>
+                <option>Select Pokemon</option>
+              </select>
+              <div class="overSelect"></div>
+            </div>
+            <div id="checkboxes">
+                <%for (let i=0; i<pokemon.length; i++){%>
+              <label>
+                <input type="checkbox" name="<%=pokemon[i].name%>" value="<%=pokemon[i].id%>" 
+                <% for (let j=0; j<player.Pokemons.length; j++){%>
+                    <% if(player.Pokemons[j].name == pokemon[i].name){%>
+                        checked
+                    <%}%>
+                <%}%>
+                /><%=pokemon[i].name%></label>
+                <%}%>
+            </div>
+          </div>
+        <input type="submit" value="Edit Profile">
+    </form>
+    <br><br>
+    <form action='/players/profile/<%=player.id%>?_method=DELETE' method=POST>
+        <input type="submit" value="Delete Profile">
+    </form>
+    <br><br>
+    You are part of team <%=player.Team.name%>!
+    <br>
+    <a href='/teams'>See All Teams</a>
+    <br><br>
+    You have added the following Pokemon:
+    <% for (let i=0; i<player.Pokemons.length; i++){%>
+        <li><%=player.Pokemons[i].name%></li>
+    <%}%>
+    <br><br>
+    <a href='/pokemon'>PLAY NOW!</a>
+    <script>
+        var expanded = false;
+
+    function showCheckboxes() {
+    var checkboxes = document.getElementById("checkboxes");
+    if (!expanded) {
+        checkboxes.style.display = "block";
+        expanded = true;
+    } else {
+        checkboxes.style.display = "none";
+        expanded = false;
+    }
+    }
+    </script>
+</body>
+</html>

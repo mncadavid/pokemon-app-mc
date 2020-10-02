@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+</head>
+<body>
+    <h1>Sign Up</h1>
+    <form action='/players/signup' method=POST>
+        Name: <input type="text" name="name"><br><br>
+        Username: <input type="text" name="username"><br><br>
+        Password: <input type="text" name="password"><br><br>
+        Team: <select name="teamId" id="teams">
+            <%for (let i=0; i<teams.length; i++){%>
+                <option value="<%=teams[i].id%>"><%=teams[i].name%></option>
+            <%}%>
+            </select>
+            <br><br>
+        <input type="submit" value="Sign Up">
+    </form>
+</body>
+</html>

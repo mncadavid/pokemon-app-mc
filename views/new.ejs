@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/pokemon.css">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Create Your Pokemon!</h1>
+    <form action="/pokemon" method="POST" enctype="multipart/form-data">
+        <input type="text" name="name">
+        <!-- <input type="text" name="img"> -->
+        <input type="file" name="img" id= "file" acccept="image/*" onchange="loadFile(event)">
+        <input type="submit">
+    </form>
+</body>
+</html>

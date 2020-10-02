@@ -1,0 +1,41 @@
+body{
+    color: blue;
+    font-family: 'Baloo Tammudu 2', cursive;
+    background-image: linear-gradient(to bottom right, rgba(255,0,0,0.7), rgba(255,255,0,0.7), rgba(0,0,255,0.7));
+    height: 100vh;
+}
+/* Used the CSS from this website to get the drop down and check box effect
+https://stackoverflow.com/questions/17714705/how-to-use-checkbox-inside-select-option */
+.multiselect {
+    width: 200px;
+  }
+  
+  .selectBox {
+    position: relative;
+  }
+  
+  .selectBox select {
+    width: 100%;
+    font-weight: bold;
+  }
+  
+  .overSelect {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+  
+  #checkboxes {
+    display: none;
+    border: 1px #dadada solid;
+  }
+  
+  #checkboxes label {
+    display: block;
+  }
+  
+  #checkboxes label:hover {
+    background-color: #1e90ff;
+  }

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Members</title>
+</head>
+<body>
+    <h1><%=team.name%></h1>
+    Team members include:
+    <% for (let i=0; i<team.Players.length; i++){%>
+        <li><a href="/players/profile/<%=team.Players[i].id%>"><%=team.Players[i].name%></a></li>
+        <%}%>
+    <br><br>
+    <a href='/teams'>Back to Teams</a>
+</body>
+</html>
